@@ -1,0 +1,6 @@
+# Ignorar archivos del IDE
+.idea/
+.vscode/
+
+# Ignorar archivos de sistema
+.DS_Store
