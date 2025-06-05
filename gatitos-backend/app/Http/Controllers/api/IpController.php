@@ -12,13 +12,13 @@ class IpController extends Controller
      * Genera todas las posibles direcciones ip validas dada una cadena de digitos
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illu    minate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function construirCasitas(Request $request){
         $cadenaJuguetes = $request->input('cadenaJuguetes');
         //validación de la cadena de jueguetes
         if(!$cadenaJuguetes || !preg_match('/^\d{1,20}$/', $cadenaJuguetes)){
-            return response()->json(['error' => 'Cadena de jugentes invalida. La cadena de juguetes debe contener solo números y tener entre 1 y 20 dígitos']);
+            return response()->json(['error' => 'Cadena de jugentes invalida. La cadena de juguetes debe contener solo números y tener entre 1 y 20 dígitos'], 400);
         }
         //Realiza las posibles combinaciones
         $ips = $this->generateIps($cadenaJuguetes, 0, []);
