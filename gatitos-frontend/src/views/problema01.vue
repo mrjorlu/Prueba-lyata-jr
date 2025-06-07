@@ -44,7 +44,7 @@
           <!-- Cada IP válida -->
           <div class="p-4 hover:bg-pink-50 transition-colors flex justify-between items-center" v-for="(ip, idx) in ipGatunas" :key="idx">
             <span class="font-mono text-lg">{{ ip }}</span>
-            <button class="text-pink-500 hover:text-pink-700 p-1 rounded-full hover:bg-pink-100 cursor-pointer" @click="">
+            <button class="text-pink-500 hover:text-pink-700 p-1 rounded-full hover:bg-pink-100 cursor-pointer" @click="copiarIp(idx)">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
                 <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
@@ -99,9 +99,17 @@
       isLoading.value = false;
     }
   }
- const isFormValid = computed(() => {
-  return (
-    /^\d{1,20}$/.test(cadenaJuguetes.value)
-  );
-});
+  const isFormValid = computed(() => {
+    return (
+      /^\d{1,20}$/.test(cadenaJuguetes.value)
+    );
+  });
+  const copiarIp = async (idx) => {
+  try {
+    await navigator.clipboard.writeText(ipGatunas.value[idx]);
+    alert('se ha copiado la ip');
+  } catch (err) {
+    console.error("Error al copiar:", err);
+  }
+};
 </script>
