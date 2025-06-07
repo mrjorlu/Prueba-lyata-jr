@@ -22,7 +22,7 @@ class IpController extends Controller
         }
         //Realiza las posibles combinaciones
         $ips = $this->generateIps($cadenaJuguetes, 0, []);
-        return response()->json($ips);
+        return response()->json(['ipGatunas' => $ips]);
     }
 
     /**
