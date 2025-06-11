@@ -23,7 +23,7 @@ class DesifrarMaullidoController extends Controller
         $contador = 0;
         $frases = $this->generarFrases($maullido, $diccionarioFelino, $memoria, $contador);
 
-        return response()->json(['maullidoSecreto' => $frases]);
+        return response()->json(['maullidoSecreto' => $frases, 'maullido' => $maullido]);
     }
 
     /**
