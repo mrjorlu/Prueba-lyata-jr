@@ -13,7 +13,7 @@ Este backend está desarrollado con **Laravel 12** y proporciona una API RESTful
 1. Clona el repositorio y navega al directorio del backend:
    ```bash
    git clone https://github.com/mrjorlu/Prueba-lyata-jr.git
-   cd misiones-gatunas/backend
+   cd gatitos-backend
 2. Instala las dependencias con Composer:
      ```bash
     composer install
