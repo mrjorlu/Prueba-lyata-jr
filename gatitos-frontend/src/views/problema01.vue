@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl mx-auto p-6">
+  <div class="md:max-w-4xl md:mx-auto md:p-6">
   <h1 class="text-3xl md:text-4xl font-bold mb-6 text-purple-900">
     🏠 Misión: Casitas Númericas
   </h1>
