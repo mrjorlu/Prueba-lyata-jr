@@ -31,18 +31,11 @@ npm -v
 2. Instala las dependencias del proyecto:
    ```bash
    npm install
-3. Inicia el servidor de desarrollo:
+3. Copia el archivo de configuración de entorno
+   ```bash
+   cp .env.example .env
+4. Inicia el servidor de desarrollo:
    ```bash
    npm run dev
 ## ⚙️ Configuración de la API
-La URL base del backend se encuentra definida en el archivo:
-`src/services/api.js`
-Ejemplo de configuración:
-```javascript
-// src/services/api.js
-import axios from 'axios';
-const api = axios.create({ 
-    baseURL: 'http://127.0.0.1:8000/api',  // Cambia esta URL si el backend está en otro host/puerto
-});
-export default api;
-```
+   configura tu archivo de entorno .env y pon la url de tu api (por defecto esta localhost)
